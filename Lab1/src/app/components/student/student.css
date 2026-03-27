@@ -1,0 +1,12 @@
+.card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-title {
+  color: #333;
+}
