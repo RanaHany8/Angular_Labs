@@ -1,59 +1,43 @@
-# Student
+TASK 5  >>>>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+1. SPA vs MPA
 
-## Development server
+    SPA (Single Page Application): Loads a single HTML page and dynamically updates content as the user interacts. Fast and smooth (e.g., Angular).
 
-To start a local development server, run:
+    MPA (Multi-Page Application): Traditional web app where every click requests a completely new page from the server. Slower due to full reloads.
 
-```bash
-ng serve
-```
+2. MVC vs MVVM in Angular
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Angular primarily uses the MVVM pattern:
 
-## Code scaffolding
+    Model: The data structure and logic (e.g., Student interface).
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+    View: The UI defined in HTML (student.html).
 
-```bash
-ng generate component component-name
-```
+    ViewModel: The Component class (student.ts) that links the Model to the View using Data Binding.
+   
+   MVC (Model-View-Controller)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+    Model: Data and business logic (e.g., Student interface).
 
-```bash
-ng generate --help
-```
+    View: The user interface (HTML/CSS).
 
-## Building
+    Controller: Processes requests, coordinates between Model and View. In traditional Angular (AngularJS), the Controller was a separate entity.
 
-To build the project run:
+3. Purpose of Component Files
 
-```bash
-ng build
-```
+    .ts (TypeScript): Handles the logic, data properties, and events.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+    .html (HTML): Defines the structure and layout of the component.
 
-## Running unit tests
+    .css (CSS): Contains styles local to the component only.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+    .spec.ts (Testing): Used for unit testing the component's functionality.
 
-```bash
-ng test
-```
+4. Interpolation
 
-## Running end-to-end tests
+Interpolation is a data-binding technique used to display dynamic data from the TypeScript file into the HTML template.
 
-For end-to-end (e2e) testing, run:
+    Syntax: Uses double curly braces {{ }}.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    Example: <h3>{{ student.name }}</h3> will render the actual name stored in the variable.
