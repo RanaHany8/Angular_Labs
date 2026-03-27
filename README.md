@@ -1,11 +1,11 @@
 # Angular ITI Labs 
 
-Welcome to my Angular training repository at ITI. This project showcases my progress in learning Angular.
+Welcome to my Angular training repository at ITI. This project showcases my tasks and progress.
 
 ## 📂 Labs Index
-To view the code for each lab, please switch to its dedicated branch:
+You can find each lab organized in its own folder:
 
-* **[Lab 1: Components & Models](https://github.com/RanaHany8/Angular_Labs/tree/lab1)**
-    * Topics: Components, Interfaces, Enums, and Bootstrap Integration.
-* **[Lab 2: Control Flow & Filters](https://github.com/RanaHany8/Angular_Labs/tree/lab2)**
-    * Topics: New Control Flow (@for, @if), ngModel, and Dynamic Styling.
+* **[Lab 1: Components & Models](./Lab1)**
+    * Topics: Components, Interfaces, and Bootstrap.
+* **[Lab 2: Control Flow & Filters](./Lab2)**
+    * Topics: New Control Flow (@for, @if), ngModel, and Styling.
