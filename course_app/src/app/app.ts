@@ -6,7 +6,7 @@ import { CoursesComponent } from './components/courses/courses';
 @Component({
   selector: 'app-root',
   standalone: true, 
-  imports: [RouterOutlet, CoursesComponent], 
+  imports: [CoursesComponent], 
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
