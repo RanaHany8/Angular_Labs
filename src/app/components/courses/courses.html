@@ -17,12 +17,30 @@
                [ngClass]="{'text-danger': course.seats === 0}"
                [ngStyle]="{'background-color': course.seats <= 2 && course.seats > 0 ? '#fff3cd' : 'white'}">
             
-            <img [src]="course.image" class="card-img-top" alt="Course Image">
+            <img [src]="course.image" class="card-img-top" alt="Course Image" style="height: 180px; object-fit: cover;">
 
             <div class="card-body">
               <h5 class="card-title">{{ course.title | uppercase }}</h5>
               <p class="mb-1">Instructor: {{ course.instructor }}</p>
+              
               <p class="mb-1 fw-bold">Price: {{ course.price | currency:'EGP ' }}</p>
+
+              <div class="mb-3 mt-2">
+                <label class="form-label small fw-bold text-dark">Enter Discount %:</label>
+                <input type="number" 
+                       class="form-control form-control-sm" 
+                       #discInput 
+                       value="10"
+                       placeholder="e.g. 15">
+              </div>
+
+              <div class="alert alert-success p-2 mb-2">
+                <small>Final Price:</small>
+                <strong class="d-block">
+                  {{ course.price | discount:( +discInput.value || 10 ) | currency:'EGP ' }}
+                </strong>
+              </div>
+
               <p>Seats Available: {{ course.seats }}</p>
 
               @if (course.seats === 0) {
@@ -34,7 +52,8 @@
               <div class="mt-3">
                 <button class="btn btn-success w-100" 
                         (click)="register(course)" 
-                        [disabled]="course.seats === 0">
+                        [disabled]="course.seats === 0"
+                        appDisableAfterClick>
                   Register Now
                 </button>
               </div>

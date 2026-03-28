@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms'; 
 import { Course } from '../../models/course'; 
-
+import { DiscountPipe } from '../../pipes/discount.pipe';
+import { DisableAfterClickDirective } from '../../directives/disable-after-click.directive';
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [CommonModule, FormsModule], 
+  imports: [CommonModule, FormsModule, DiscountPipe, DisableAfterClickDirective],
   templateUrl: './courses.html',
   styleUrl: './courses.css'
 })
