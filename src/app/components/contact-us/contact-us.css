@@ -1,0 +1,70 @@
+.contact-wrapper {
+  background-color: #fcfcfc;
+  min-height: 90vh;
+}
+
+/* كارت المعلومات الملون */
+.contact-info-card {
+  background: linear-gradient(135deg, #0d6efd 0%, #002e6e 100%);
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(13, 110, 253, 0.2);
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+/* كارت الفورم */
+.form-card {
+  border-radius: 25px;
+}
+
+.custom-input {
+  border: 1px solid #eee;
+  padding: 12px 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.1);
+  border-color: #0d6efd;
+}
+
+/* أيقونات السوشيال ميديا */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  background: white;
+  color: #0d6efd;
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  padding: 15px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+  background-color: #002e6e;
+}

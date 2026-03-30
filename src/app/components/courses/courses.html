@@ -1,0 +1,55 @@
+<div class="container mt-2">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    @for (course of courses; track course.id) {
+      <div class="col">
+        <div class="card h-100 shadow-sm" 
+             [ngClass]="{'text-danger': course.seats === 0}"
+             [ngStyle]="{'background-color': course.seats <= 2 && course.seats > 0 ? '#fff3cd' : 'white'}">
+          
+          <img [src]="course.image" class="card-img-top" alt="Course Image" style="height: 180px; object-fit: cover;">
+
+          <div class="card-body">
+            <h5 class="card-title">{{ course.title | uppercase }}</h5>
+            <p class="mb-1 text-muted">Instructor: {{ course.instructor }}</p>
+            
+            <p class="mb-1 fw-bold">Price: {{ course.price | currency:'EGP ' }}</p>
+
+            <div class="mb-3 mt-2">
+              <label class="form-label small fw-bold text-dark">Enter Discount %:</label>
+              <input type="number" 
+                     class="form-control form-control-sm" 
+                     #discInput 
+                     value="10">
+            </div>
+
+            <div class="alert alert-success p-2 mb-2">
+              <small>Final Price:</small>
+              <strong class="d-block">
+                {{ course.price | discount:( +discInput.value || 0 ) | currency:'EGP ' }}
+              </strong>
+            </div>
+
+            <p>Seats Available: {{ course.seats }}</p>
+
+            @if (course.seats === 0) {
+              <p class="badge bg-danger">Course Full</p>
+            } @else if (course.seats <= 2) {
+              <p class="text-warning fw-bold small">Almost Full!</p>
+            }
+
+            <div class="mt-3">
+              <button class="btn btn-success w-100" 
+                      (click)="register(course)" 
+                      [disabled]="course.seats === 0"
+                      appDisableAfterClick>
+                Register Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div class="alert alert-warning w-100">No courses available for this category.</div>
+    }
+  </div>
+</div>
