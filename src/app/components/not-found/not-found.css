@@ -1,0 +1,21 @@
+.not-found-wrapper {
+  min-height: 80vh; /* يضمن توسيط المحتوى رأسياً */
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.display-1 {
+  font-size: 8rem;
+  letter-spacing: -5px;
+  opacity: 0.8;
+}
+
+.btn-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}

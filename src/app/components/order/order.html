@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="card p-4 shadow-sm border-0 bg-white">
+    <h3 class="text-center mb-4 text-primary">Course Selection System</h3>
+    
+    <div class="mb-4 text-center">
+      <label class="form-label fw-bold">Filter by Category:</label>
+      <select class="form-select w-50 mx-auto" [(ngModel)]="selectedCatId">
+        <option value="0">All Categories</option>
+        @for (cat of categories; track cat.id) {
+          <option [value]="cat.id">{{ cat.name }}</option>
+        }
+      </select>
+    </div>
+
+    <hr class="my-4">
+
+    <app-courses 
+      [selectedCatId]="+selectedCatId" 
+      (totalPriceChanged)="onPriceChanged($event)">
+    </app-courses>
+
+    <div class="mt-4 p-3 bg-dark text-white border rounded text-end shadow-sm">
+      <h4 class="m-0">
+        Total Order Summary: 
+        <span class="text-warning">{{ totalPriceFromChild | currency:'EGP ' }}</span>
+      </h4>
+    </div>
+  </div>
+</div>
