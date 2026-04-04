@@ -20,7 +20,11 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
   
-    this.categories = this.catService.getAllCategories();
+this.catService.getAllCategories().subscribe({
+  next: (data) => {
+    this.categories = data;
+  }
+});
   }
 
 
@@ -28,3 +32,4 @@ export class OrderComponent implements OnInit {
     this.totalPriceFromChild = price;
   }
 }
+

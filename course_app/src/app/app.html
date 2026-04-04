@@ -1,12 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container">
-    <ul class="navbar-nav">
-      <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/courses" routerLinkActive="active">Courses</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact Us</a></li>
-    </ul>
+    <a class="navbar-brand fw-bold" routerLink="/home">Course App</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/courses" routerLinkActive="active">Courses</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link btn btn-primary text-white ms-lg-3 px-3" 
+             routerLink="/insert" 
+             routerLinkActive="active">
+             Add New Course
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link ms-lg-2" routerLink="/contact" routerLinkActive="active">Contact Us</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<router-outlet></router-outlet>
+<main class="container mt-4" style="min-height: 80vh;">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="bg-dark text-white py-3 text-center mt-5">
+  <p>&copy; 2026 Courses Academy - Rana Hany</p>
+</footer>
