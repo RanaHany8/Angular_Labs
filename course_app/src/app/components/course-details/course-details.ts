@@ -16,7 +16,7 @@ export class CourseDetailsComponent implements OnInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);
   private readonly courseService = inject(CoursesService);
   private readonly router = inject(Router);
-  private readonly cdr = inject(ChangeDetectorRef); // السطر ده مهم جداً
+  private readonly cdr = inject(ChangeDetectorRef);
 
   course: Course | undefined;
   private routeSub: Subscription | null = null;
